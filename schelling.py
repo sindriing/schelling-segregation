@@ -58,7 +58,7 @@ def parse_arguments():
     parser.add_argument("-n", "--name", default='schelling', help="name for the created gif")
     parser.add_argument("-s", "--size", type=int, default=50, help="Size of the simulation. Default:50")
     parser.add_argument("-g", "--groups", type=int, default=2, choices=[2, 3, 4], help="number of different groups in the model. default:2")
-    parser.add_argument("-d", "--prejudice", type=int, default=5, choices=[1, 2, 3, 4, 5, 6, 7], help="How many similar neighbours the agents want to be happy: default:4")
+    parser.add_argument("-d", "--prejudice", type=int, default=4, choices=[1, 2, 3, 4, 5, 6, 7], help="How many similar neighbours the agents want to be happy: default:4")
     parser.add_argument("-i", "--iterations", type=int, default=8, help="number of simulation iterations performed. default:8")
     parser.add_argument("-m", "--moves_per_frame", type=int, default=0, help="number of moves per saved image in the gif. default:size/10+1")
     parser.add_argument("-v", "--verbose", type=bool, default=True, help="Display additional information during runtime. default:True")
@@ -70,6 +70,7 @@ def parse_arguments():
         print("Iterations must be positive")
     if args.moves_per_frame <= 0:
         print("moves_per_frame must be positive")
+    args.prejudice+=1 # adjustmets because prejudice checks count the agent itself
     return args
 
 if __name__ == "__main__":
