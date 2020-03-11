@@ -3,6 +3,7 @@
 
 import random
 import argparse
+import datetime
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
@@ -55,7 +56,7 @@ def add_frame(arr, ims):
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Schellings Segregation Model")
     parser.add_argument("mode", choices=["gif", "image", "live"], help="should the program save the simulation as a gif, save the final result as a png or show the simulation on screen?")
-    parser.add_argument("-n", "--name", default='schelling', help="name for the created gif")
+    parser.add_argument("-n", "--name", default='schelling'+datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S"), help="name for the created gif")
     parser.add_argument("-s", "--size", type=int, default=50, help="Size of the simulation. Default:50")
     parser.add_argument("-g", "--groups", type=int, default=2, choices=[2, 3, 4], help="number of different groups in the model. default:2")
     parser.add_argument("-d", "--prejudice", type=int, default=4, choices=[1, 2, 3, 4, 5, 6, 7], help="How many similar neighbours the agents want to be happy: default:4")
