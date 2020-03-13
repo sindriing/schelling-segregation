@@ -13,7 +13,8 @@
     python schelling.py image
 ## Advanced
    To see the full list of current parameters, details and defaults run:
-   `python schelling.py -h`\
-   The currently supported parameters include number of groups, size of the board, the prejudice of the agents and more.
+   `python3 schelling.py -h`\
+   Example of advanced run:\
+   `python3 schelling.py image --groups 3 --size 90 --prejudice 4 --iterations 20 --moves-per-frame 8` 
   
   
